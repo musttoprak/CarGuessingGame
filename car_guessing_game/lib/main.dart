@@ -1,6 +1,7 @@
-import 'package:car_guessing_game/home_page.dart';
+import 'package:car_guessing_game/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const HomePage());
+  runApp(const Splash());
 }
+

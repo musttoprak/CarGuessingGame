@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "793372246992",
-    "project_id": "demouyg-41850",
-    "storage_bucket": "demouyg-41850.appspot.com"
+    "project_number": "1091397481498",
+    "project_id": "carguessingapp",
+    "storage_bucket": "carguessingapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:793372246992:android:2bfee714ca688353bdafd5",
+        "mobilesdk_app_id": "1:1091397481498:android:ef8e75fd73b95ba2eb0da3",
         "android_client_info": {
-          "package_name": "com.example.authentication_uygulamasi"
+          "package_name": "com.example.car_guessing_game"
         }
       },
       "oauth_client": [
         {
-          "client_id": "793372246992-kjr438lcvscam59gqkp795r4d5fg1suj.apps.googleusercontent.com",
+          "client_id": "1091397481498-n8bpj6ogn4v3jtbuuo0eh59k1uqvpvqs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.authentication_uygulamasi",
-            "certificate_hash": "9dd31b9ec2b94f49f088ebb263303f8322e05302"
+            "package_name": "com.example.car_guessing_game",
+            "certificate_hash": "160152b1d017294ac40e0e65c6a9c0e8e907adef"
           }
         },
         {
-          "client_id": "793372246992-99serrjvsnobd6jmpjfdadh9k4lsr4l8.apps.googleusercontent.com",
+          "client_id": "1091397481498-r1fdsuf6f5ksje93eca5s1obpg12amnb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDo2UvacmaTHY7FvrDuNwup-zSQs1KfXBo"
+          "current_key": "AIzaSyA3ewsVJdY2lfGggbWDvJ1B0uFh3KnRv4Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "793372246992-99serrjvsnobd6jmpjfdadh9k4lsr4l8.apps.googleusercontent.com",
+              "client_id": "1091397481498-r1fdsuf6f5ksje93eca5s1obpg12amnb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
