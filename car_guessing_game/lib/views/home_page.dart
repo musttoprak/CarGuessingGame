@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:car_guessing_game/views/questions_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,12 +8,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> _kategoriler = [
-    "Süreli Yarışma",
-    "Süresiz Yarışma",
-    "Araba Markasına Göre Süreli",
-    "Araba Markasına Göre Süresiz"
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,24 +33,30 @@ class _HomePageState extends State<HomePage> {
             child: Icon(Icons.settings, size: 30),
           )
         ],
+        automaticallyImplyLeading: true,
       ),
       body: Column(children: listCategories),
-      backgroundColor: Colors.grey.shade700,
+      backgroundColor: Colors.grey.shade400,
     );
   }
 
   List<Widget> get listCategories {
+    List<String> kategoriler = [
+      "Süreli Yarışma",
+      "Süresiz Yarışma",
+      "Markaya Göre Süreli",
+      "Markaya Göre Süresiz"
+    ];
     return [
       Padding(
         padding: const EdgeInsets.only(top: 20),
         child: Container(
           height: 40,
-          decoration: BoxDecoration(),
           alignment: Alignment.center,
           child: const Text(
             "Kategoriler",
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 28, color: Colors.white),
+                fontWeight: FontWeight.bold, fontSize: 28,color: Colors.white),
           ),
         ),
       ),
@@ -68,13 +65,17 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.blue.shade300,
-                border: Border.all(color: Colors.black, width: 4),
-                borderRadius: const BorderRadius.all(Radius.circular(36))),
+              color: const Color(0xFF8deeee),
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: const BorderRadius.all(Radius.circular(36)),
+              image: const DecorationImage(
+                  image: AssetImage("assets/kum.png"),
+                  repeat: ImageRepeat.repeat),
+            ),
             alignment: Alignment.center,
             child: Text(
-              _kategoriler[0],
-              style: TextStyle(fontSize: 20),
+              kategoriler[0],
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white ),
             ),
           ),
         ),
@@ -84,13 +85,17 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.blue.shade200,
-                border: Border.all(color: Colors.black, width: 4),
-                borderRadius: const BorderRadius.all(Radius.circular(36))),
+              color: Colors.blue.shade200,
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: const BorderRadius.all(Radius.circular(36)),
+              image: const DecorationImage(
+                  image: AssetImage("assets/sonsuz.png"),
+                  repeat: ImageRepeat.repeat),
+            ),
             alignment: Alignment.center,
             child: Text(
-              _kategoriler[1],
-              style: TextStyle(fontSize: 20),
+              kategoriler[1],
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white  ),
             ),
           ),
         ),
@@ -100,13 +105,17 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.blue.shade100,
-                border: Border.all(color: Colors.black, width: 4),
-                borderRadius: const BorderRadius.all(Radius.circular(36))),
+              color: Colors.blue.shade100,
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: const BorderRadius.all(Radius.circular(36)),
+              image: const DecorationImage(
+                  image: AssetImage("assets/car.png"),
+                  repeat: ImageRepeat.repeat),
+            ),
             alignment: Alignment.center,
             child: Text(
-              _kategoriler[2],
-              style: TextStyle(fontSize: 20),
+              kategoriler[2],
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white  ),
             ),
           ),
         ),
@@ -116,20 +125,25 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.blue.shade50,
-                border: Border.all(color: Colors.black, width: 4),
-                borderRadius: const BorderRadius.all(Radius.circular(36))),
+              color: Colors.white,
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: const BorderRadius.all(Radius.circular(36)),
+              image: const DecorationImage(
+                  image: AssetImage("assets/car.png"),
+                  fit: BoxFit.contain,
+                  repeat: ImageRepeat.repeat),
+            ),
             alignment: Alignment.center,
             child: Text(
-              _kategoriler[3],
-              style: TextStyle(fontSize: 20),
+              kategoriler[3],
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white  ),
             ),
           ),
         ),
       ),
-      SizedBox(height: 50,)
+      const SizedBox(
+        height: 50,
+      )
     ];
   }
-
-
 }

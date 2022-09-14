@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:car_guessing_game/models/car_brand.dart';
+import 'package:car_guessing_game/models/car_model.dart';
 
-class Car {
-  int id;
-  String marka;
-  String model;
-  String imageUrl;
+class Car{
+  final CarModel model;
+  final CarBrand brand;
 
-  Car(this.id,this.marka,this.model,this.imageUrl);
+  Car(this.model, this.brand);
+ 
+
+ 
 }

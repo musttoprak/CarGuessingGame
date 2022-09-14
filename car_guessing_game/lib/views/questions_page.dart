@@ -1,16 +1,15 @@
+import 'package:car_guessing_game/models/car.dart';
+import 'package:car_guessing_game/models/car_model.dart';
 import 'package:flutter/material.dart';
 
 class Questions extends StatefulWidget {
-  late int selectedIndex;
-  Questions(this.selectedIndex,{super.key});
-
+  const Questions({super.key});
   @override
-  State<Questions> createState() => _QuestionsState(selectedIndex);
+  State<Questions> createState() => _QuestionsState();
 }
 
 class _QuestionsState extends State<Questions> {
-  late int selectedIndex;
-  _QuestionsState(this.selectedIndex);
+  _QuestionsState();
 
   @override
   Widget build(BuildContext context) {
