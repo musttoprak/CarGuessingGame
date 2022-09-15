@@ -10,15 +10,53 @@ class Strings {
 
   static List<CarBrand> CarBrands = [
     //brandId=0
-    CarBrand("Mercedes"),
+    CarBrand(brandName: "Mercedes",imageUrl: "assets/mercedes_benz.png"),
     //brandId=1
-    CarBrand("Bmw"),
+    CarBrand(brandName:"Bmw",imageUrl:"assets/bmw.png"),
     //brandId=2
-    CarBrand("Volkswagen"),
+    CarBrand(brandName:"Volkswagen",imageUrl:"assets/volkswagen.png"),
     //brandId=3
-    CarBrand("Fiat"),
+    CarBrand(brandName:"Fiat",imageUrl:"assets/fiat.png"),
     //brandId=4
-    CarBrand("Ford"),
+    CarBrand(brandName:"Ford",imageUrl:"assets/ford.png"),
+    //brandId=5
+    CarBrand(brandName:"Audi",imageUrl:"assets/audi.png"),
+    //brandId=6
+    CarBrand(brandName:"Opel",imageUrl:"assets/opel.png"),
+    //brandId=7
+    CarBrand(brandName:"Renault",imageUrl:"assets/renault.png"),
+    //brandId=8
+    CarBrand(brandName:"Porsche",imageUrl:"assets/porsche.png"),
+    //brandId=9
+    CarBrand(brandName:"Peugeot",imageUrl:"assets/peugeot.png"),
+    //brandId=10
+    CarBrand(brandName:"Seat",imageUrl:"assets/seat.png"),
+    //brandId=11
+    CarBrand(brandName:"Skoda",imageUrl:"assets/skoda.png"),
+    //brandId=12
+    CarBrand(brandName:"Volvo",imageUrl:"assets/volvo.png"),
+    //brandId=13
+    CarBrand(brandName:"Suzuki",imageUrl:"assets/suzuki.png"),
+    //brandId=14
+    CarBrand(brandName:"Nissan",imageUrl:"assets/nissan.png"),
+    //brandId=15
+    CarBrand(brandName:"Mitsubishi",imageUrl:"assets/mitsubishi.png"),
+    //brandId=16
+    CarBrand(brandName:"Mazda",imageUrl:"assets/mazda.png"),
+    //brandId=17
+    CarBrand(brandName:"Honda",imageUrl:"assets/honda.png"),
+    //brandId=18
+    CarBrand(brandName:"Kia",imageUrl:"assets/kia.png"),
+    //brandId=19
+    CarBrand(brandName:"Hyundai",imageUrl:"assets/hyundai.png"),
+    //brandId=20
+    CarBrand(brandName:"Chevrolet",imageUrl:"assets/chevrolet.png"),
+    //brandId=21
+    CarBrand(brandName:"Isuzu",imageUrl:"assets/isuzu.png"),
+    //brandId=22
+    CarBrand(brandName:"Land-Rover",imageUrl:"assets/land_rover.png"),
+    //brandId=22
+    CarBrand(brandName:"Toyota",imageUrl:"assets/toyota.png"),
   ];
 
   static List<CarModel> CarModels=[

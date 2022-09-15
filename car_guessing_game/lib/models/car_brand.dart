@@ -1,7 +1,8 @@
 class CarBrand{
   final String brandName;
+  final String imageUrl;
 
-  CarBrand(this.brandName);
+  CarBrand({ required this.brandName,required this.imageUrl});
 
 
 }
