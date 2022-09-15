@@ -1,3 +1,8 @@
+import 'dart:math';
+
+import 'package:car_guessing_game/data/strings.dart';
+import 'package:car_guessing_game/views/brand_categories.dart';
+import 'package:car_guessing_game/views/questions_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,21 +17,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white60,
+        backgroundColor: Color(211102242122),
         elevation: 1,
-        title: const Text(
-          "Mustafa Toprak",
-          style: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),
+        title: const Center(
+          child: Text(
+            Strings.AppName,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),
+          ),
         ),
-        toolbarHeight: 70,
+        toolbarHeight: 80,
         leading: const Padding(
           padding: EdgeInsets.only(left: 10),
           child: CircleAvatar(
-            backgroundColor: Colors.blueGrey,
-            child: Text("M"),
+            backgroundImage: Strings.avatar,
           ),
         ),
+        leadingWidth: 65,
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 10),
@@ -51,71 +59,56 @@ class _HomePageState extends State<HomePage> {
       Padding(
         padding: const EdgeInsets.only(top: 20),
         child: Container(
+          color: Colors.black,
           height: 40,
           alignment: Alignment.center,
           child: const Text(
             "Kategoriler",
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 28,color: Colors.white),
+                fontWeight: FontWeight.bold, fontSize: 28, color: Colors.white),
           ),
         ),
       ),
       Expanded(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFF8deeee),
-              border: Border.all(color: Colors.black, width: 4),
-              borderRadius: const BorderRadius.all(Radius.circular(36)),
-              image: const DecorationImage(
-                  image: AssetImage("assets/kum.png"),
-                  repeat: ImageRepeat.repeat),
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              kategoriler[0],
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white ),
-            ),
+        child: GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const BrandCategory()),
           ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.blue.shade200,
-              border: Border.all(color: Colors.black, width: 4),
-              borderRadius: const BorderRadius.all(Radius.circular(36)),
-              image: const DecorationImage(
-                  image: AssetImage("assets/sonsuz.png"),
-                  repeat: ImageRepeat.repeat),
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              kategoriler[1],
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white  ),
-            ),
-          ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.blue.shade100,
-              border: Border.all(color: Colors.black, width: 4),
-              borderRadius: const BorderRadius.all(Radius.circular(36)),
-              image: const DecorationImage(
-                  image: AssetImage("assets/car.png"),
-                  repeat: ImageRepeat.repeat),
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              kategoriler[2],
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white  ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.black, width: 1),
+                borderRadius: const BorderRadius.all(Radius.circular(36)),
+              ),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(160225175227),
+                        border: Border.all(color: Colors.black, width: 4),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(36)),
+                        image: const DecorationImage(
+                            image: AssetImage("assets/kum.png"),
+                            repeat: ImageRepeat.repeat),
+                      ),
+                      alignment: Alignment.center,
+                    ),
+                  ),
+                  Text(
+                    kategoriler[0],
+                    style: const TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        backgroundColor: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -126,17 +119,107 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(color: Colors.black, width: 4),
+              border: Border.all(color: Colors.black, width: 1),
               borderRadius: const BorderRadius.all(Radius.circular(36)),
-              image: const DecorationImage(
-                  image: AssetImage("assets/car.png"),
-                  fit: BoxFit.contain,
-                  repeat: ImageRepeat.repeat),
             ),
-            alignment: Alignment.center,
-            child: Text(
-              kategoriler[3],
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold,color: Colors.black,backgroundColor:Colors.white  ),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(1582274289),
+                      border: Border.all(color: Colors.black, width: 4),
+                      borderRadius: const BorderRadius.all(Radius.circular(36)),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/sonsuz.png"),
+                          repeat: ImageRepeat.repeat),
+                    ),
+                    alignment: Alignment.center,
+                  ),
+                ),
+                Text(
+                  kategoriler[1],
+                  style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      backgroundColor: Colors.white),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.black, width: 1),
+              borderRadius: const BorderRadius.all(Radius.circular(36)),
+            ),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(1911038479),
+                      border: Border.all(color: Colors.black, width: 4),
+                      borderRadius: const BorderRadius.all(Radius.circular(36)),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/car.png"),
+                          repeat: ImageRepeat.repeat),
+                    ),
+                    alignment: Alignment.center,
+                  ),
+                ),
+                Text(
+                  kategoriler[2],
+                  style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      backgroundColor: Colors.white),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.black, width: 1),
+              borderRadius: const BorderRadius.all(Radius.circular(36)),
+            ),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(23177247105),
+                      border: Border.all(color: Colors.black, width: 4),
+                      borderRadius: const BorderRadius.all(Radius.circular(36)),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/car.png"),
+                          repeat: ImageRepeat.repeat),
+                    ),
+                    alignment: Alignment.center,
+                  ),
+                ),
+                Text(
+                  kategoriler[3],
+                  style: const TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
             ),
           ),
         ),

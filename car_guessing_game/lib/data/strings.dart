@@ -7,56 +7,56 @@ import 'package:flutter/material.dart';
 
 class Strings {
   static const String AppName = "Car Guessing Game";
-
+  static const AssetImage avatar =  AssetImage("assets/guesscar.jpg");
   static List<CarBrand> CarBrands = [
     //brandId=0
-    CarBrand(brandName: "Mercedes",imageUrl: "assets/mercedes_benz.png"),
+    CarBrand(brandName: "Mercedes",imageUrl: "mercedes_benz.png"),
     //brandId=1
-    CarBrand(brandName:"Bmw",imageUrl:"assets/bmw.png"),
+    CarBrand(brandName:"Bmw",imageUrl:"bmw.png"),
     //brandId=2
-    CarBrand(brandName:"Volkswagen",imageUrl:"assets/volkswagen.png"),
+    CarBrand(brandName:"Volkswagen",imageUrl:"volkswagen.png"),
     //brandId=3
-    CarBrand(brandName:"Fiat",imageUrl:"assets/fiat.png"),
+    CarBrand(brandName:"Fiat",imageUrl:"fiat.png"),
     //brandId=4
-    CarBrand(brandName:"Ford",imageUrl:"assets/ford.png"),
+    CarBrand(brandName:"Ford",imageUrl:"ford.png"),
     //brandId=5
-    CarBrand(brandName:"Audi",imageUrl:"assets/audi.png"),
+    CarBrand(brandName:"Audi",imageUrl:"audi.png"),
     //brandId=6
-    CarBrand(brandName:"Opel",imageUrl:"assets/opel.png"),
+    CarBrand(brandName:"Opel",imageUrl:"opel.png"),
     //brandId=7
-    CarBrand(brandName:"Renault",imageUrl:"assets/renault.png"),
+    CarBrand(brandName:"Renault",imageUrl:"renault.png"),
     //brandId=8
-    CarBrand(brandName:"Porsche",imageUrl:"assets/porsche.png"),
+    CarBrand(brandName:"Porsche",imageUrl:"porsche.png"),
     //brandId=9
-    CarBrand(brandName:"Peugeot",imageUrl:"assets/peugeot.png"),
+    CarBrand(brandName:"Peugeot",imageUrl:"peugeot.png"),
     //brandId=10
-    CarBrand(brandName:"Seat",imageUrl:"assets/seat.png"),
+    CarBrand(brandName:"Seat",imageUrl:"seat.png"),
     //brandId=11
-    CarBrand(brandName:"Skoda",imageUrl:"assets/skoda.png"),
+    CarBrand(brandName:"Skoda",imageUrl:"skoda.png"),
     //brandId=12
-    CarBrand(brandName:"Volvo",imageUrl:"assets/volvo.png"),
+    CarBrand(brandName:"Volvo",imageUrl:"volvo.png"),
     //brandId=13
-    CarBrand(brandName:"Suzuki",imageUrl:"assets/suzuki.png"),
+    CarBrand(brandName:"Suzuki",imageUrl:"suzuki.png"),
     //brandId=14
-    CarBrand(brandName:"Nissan",imageUrl:"assets/nissan.png"),
+    CarBrand(brandName:"Nissan",imageUrl:"nissan.png"),
     //brandId=15
-    CarBrand(brandName:"Mitsubishi",imageUrl:"assets/mitsubishi.png"),
+    CarBrand(brandName:"Mitsubishi",imageUrl:"mitsubishi.png"),
     //brandId=16
-    CarBrand(brandName:"Mazda",imageUrl:"assets/mazda.png"),
+    CarBrand(brandName:"Mazda",imageUrl:"mazda.png"),
     //brandId=17
-    CarBrand(brandName:"Honda",imageUrl:"assets/honda.png"),
+    CarBrand(brandName:"Honda",imageUrl:"honda.png"),
     //brandId=18
-    CarBrand(brandName:"Kia",imageUrl:"assets/kia.png"),
+    CarBrand(brandName:"Kia",imageUrl:"kia.png"),
     //brandId=19
-    CarBrand(brandName:"Hyundai",imageUrl:"assets/hyundai.png"),
+    CarBrand(brandName:"Hyundai",imageUrl:"hyundai.png"),
     //brandId=20
-    CarBrand(brandName:"Chevrolet",imageUrl:"assets/chevrolet.png"),
+    CarBrand(brandName:"Chevrolet",imageUrl:"chevrolet.png"),
     //brandId=21
-    CarBrand(brandName:"Isuzu",imageUrl:"assets/isuzu.png"),
+    CarBrand(brandName:"Isuzu",imageUrl:"isuzu.png"),
     //brandId=22
-    CarBrand(brandName:"Land-Rover",imageUrl:"assets/land_rover.png"),
+    CarBrand(brandName:"Land-Rover",imageUrl:"land_rover.png"),
     //brandId=22
-    CarBrand(brandName:"Toyota",imageUrl:"assets/toyota.png"),
+    CarBrand(brandName:"Toyota",imageUrl:"toyota.png"),
   ];
 
   static List<CarModel> CarModels=[
@@ -82,7 +82,7 @@ class Strings {
     List<Car> cars=[];
     for(var i=0;i<=CarModels.length;i++){
       if(CarModels[i].brandId==wantedBrandId){
-        cars.add(Car(CarModels[i], CarBrand(CarBrands[wantedBrandId].brandName)));
+        cars.add(Car(CarModels[i], CarBrand(brandName: CarBrands[wantedBrandId].brandName, imageUrl: CarBrands[wantedBrandId].imageUrl)));
       }
     }
     return cars;
@@ -91,7 +91,7 @@ class Strings {
   
   static CarBrand findToBrand(int index) {
     int brandId=CarModels[index].brandId;
-    return CarBrand(CarBrands[brandId].brandName);
+    return CarBrand(brandName: CarBrands[brandId].brandName,imageUrl: CarBrands[brandId].imageUrl);
   }
   
   

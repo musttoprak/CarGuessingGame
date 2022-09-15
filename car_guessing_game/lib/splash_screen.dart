@@ -1,3 +1,4 @@
+import 'package:car_guessing_game/data/strings.dart';
 import 'package:car_guessing_game/views/home_page.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class SplashScreenState extends State<SplashScreen> {
 
   EasySplashScreen loadingScreen() {
     return EasySplashScreen(
-      logo: Image.asset('assets/guesscar.jpg'),
+      logo: const Image(image: Strings.avatar),
       title: const Text(
         "Guess The Car",
         style: TextStyle(
@@ -40,7 +41,7 @@ class SplashScreenState extends State<SplashScreen> {
           fontWeight: FontWeight.bold,
         ),
       ),
-      backgroundColor: Colors.grey.shade400,
+      backgroundColor: Colors.blue.shade400,
       showLoader: true,
       loadingText: const Text("Yükleniyor..."),
       navigator: const HomePage(),

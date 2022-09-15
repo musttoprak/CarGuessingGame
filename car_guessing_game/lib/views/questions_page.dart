@@ -13,6 +13,11 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("appbar"),
+      ),
+      body: Text("naber"),
+    );
   }
 }
