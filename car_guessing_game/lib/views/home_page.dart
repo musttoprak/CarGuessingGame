@@ -49,66 +49,35 @@ class _HomePageState extends State<HomePage> {
   }
 
   List<Widget> get listCategories {
-    List<String> kategoriler = [
-      "Süreli Yarışma",
-      "Süresiz Yarışma",
-      "Markaya Göre Süreli",
-      "Markaya Göre Süresiz"
-    ];
+    List<String> kategoriler = ["Marka Bilme", "Model Bilme","Markaya Göre Model Bilme"];
     return [
-      Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Container(
-          color: Colors.black,
-          height: 40,
-          alignment: Alignment.center,
-          child: const Text(
-            "Kategoriler",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 28, color: Colors.white),
-          ),
-        ),
-      ),
       Expanded(
-        child: GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const BrandCategory()),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.black, width: 1),
-                borderRadius: const BorderRadius.all(Radius.circular(36)),
-              ),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(160225175227),
-                        border: Border.all(color: Colors.black, width: 4),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(36)),
-                        image: const DecorationImage(
-                            image: AssetImage("assets/kum.png"),
-                            repeat: ImageRepeat.repeat),
-                      ),
-                      alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+          child: Container(
+            child: Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(1582274289),
+                      border: Border.all(color: Colors.black, width: 4),
+                      borderRadius: const BorderRadius.all(Radius.circular(36)),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/kum.png"),
+                          repeat: ImageRepeat.repeat),
                     ),
+                    alignment: Alignment.center,
                   ),
-                  Text(
-                    kategoriler[0],
-                    style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        backgroundColor: Colors.white),
-                  ),
-                ],
-              ),
+                ),
+                Text(
+                  kategoriler[0],
+                  style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              ],
             ),
           ),
         ),
@@ -117,11 +86,6 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.black, width: 1),
-              borderRadius: const BorderRadius.all(Radius.circular(36)),
-            ),
             child: Column(
               children: [
                 Expanded(
@@ -140,86 +104,47 @@ class _HomePageState extends State<HomePage> {
                 Text(
                   kategoriler[1],
                   style: const TextStyle(
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      backgroundColor: Colors.white),
+                      color: Colors.black),
                 ),
               ],
             ),
           ),
         ),
       ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.black, width: 1),
-              borderRadius: const BorderRadius.all(Radius.circular(36)),
-            ),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(1911038479),
-                      border: Border.all(color: Colors.black, width: 4),
-                      borderRadius: const BorderRadius.all(Radius.circular(36)),
-                      image: const DecorationImage(
-                          image: AssetImage("assets/car.png"),
-                          repeat: ImageRepeat.repeat),
+       Expanded(
+        child: GestureDetector(
+          onTap: ()=>Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const BrandCategory()),),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+            child: Container(
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(1582274289),
+                        border: Border.all(color: Colors.black, width: 4),
+                        borderRadius: const BorderRadius.all(Radius.circular(36)),
+                        image: const DecorationImage(
+                            image: AssetImage("assets/car.png"),
+                            repeat: ImageRepeat.repeat),
+                      ),
+                      alignment: Alignment.center,
                     ),
-                    alignment: Alignment.center,
                   ),
-                ),
-                Text(
-                  kategoriler[2],
-                  style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      backgroundColor: Colors.white),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.black, width: 1),
-              borderRadius: const BorderRadius.all(Radius.circular(36)),
-            ),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color(23177247105),
-                      border: Border.all(color: Colors.black, width: 4),
-                      borderRadius: const BorderRadius.all(Radius.circular(36)),
-                      image: const DecorationImage(
-                          image: AssetImage("assets/car.png"),
-                          repeat: ImageRepeat.repeat),
-                    ),
-                    alignment: Alignment.center,
+                  Text(
+                    kategoriler[2],
+                    style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
-                ),
-                Text(
-                  kategoriler[3],
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
