@@ -49,7 +49,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   List<Widget> get listCategories {
-    List<String> kategoriler = ["Marka Bilme", "Model Bilme","Markaya Göre Model Bilme"];
+    List<String> kategoriler = [
+      "Marka Bilme",
+      "Model Bilme",
+      "Markaya Göre Model Bilme"
+    ];
     return [
       Expanded(
         child: Padding(
@@ -83,41 +87,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       Expanded(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-          child: Container(
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color(1582274289),
-                      border: Border.all(color: Colors.black, width: 4),
-                      borderRadius: const BorderRadius.all(Radius.circular(36)),
-                      image: const DecorationImage(
-                          image: AssetImage("assets/sonsuz.png"),
-                          repeat: ImageRepeat.repeat),
-                    ),
-                    alignment: Alignment.center,
-                  ),
-                ),
-                Text(
-                  kategoriler[1],
-                  style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                ),
-              ],
-            ),
+        child: InkWell(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Questions()),
           ),
-        ),
-      ),
-       Expanded(
-        child: GestureDetector(
-          onTap: ()=>Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const BrandCategory()),),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
             child: Container(
@@ -129,6 +103,44 @@ class _HomePageState extends State<HomePage> {
                         color: const Color(1582274289),
                         border: Border.all(color: Colors.black, width: 4),
                         borderRadius: const BorderRadius.all(Radius.circular(36)),
+                        image: const DecorationImage(
+                            image: AssetImage("assets/sonsuz.png"),
+                            repeat: ImageRepeat.repeat),
+                      ),
+                      alignment: Alignment.center,
+                    ),
+                  ),
+                  Text(
+                    kategoriler[1],
+                    style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      Expanded(
+        child: InkWell(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const BrandCategory()),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+            child: Container(
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(1582274289),
+                        border: Border.all(color: Colors.black, width: 4),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(36)),
                         image: const DecorationImage(
                             image: AssetImage("assets/car.png"),
                             repeat: ImageRepeat.repeat),
