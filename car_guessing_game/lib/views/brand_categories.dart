@@ -11,14 +11,12 @@ class BrandCategory extends StatefulWidget {
 class _BrandCategoryState extends State<BrandCategory> {
   @override
   Widget build(BuildContext context) {
-    double screenwidth = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white60,
           elevation: 1,
           title: TextField(
             decoration: InputDecoration(
-              fillColor: Colors.white,
+                fillColor: Colors.white,
                 hintText: "Search",
                 hintStyle: const TextStyle(color: Colors.black, fontSize: 18),
                 prefixIcon: const Icon(Icons.search, color: Colors.black),
@@ -32,7 +30,7 @@ class _BrandCategoryState extends State<BrandCategory> {
         ),
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: GridView.count(
                 primary: false,
                 padding: const EdgeInsets.all(20),
@@ -42,7 +40,7 @@ class _BrandCategoryState extends State<BrandCategory> {
                 children: Strings.CarBrands.map((brand) => Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.1),
+                        color: Colors.white.withOpacity(0.4),
                         image: DecorationImage(
                             image: AssetImage("assets/brand/${brand.imageUrl}"),
                             fit: BoxFit.contain),
@@ -55,7 +53,7 @@ class _BrandCategoryState extends State<BrandCategory> {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           brand.brandName,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
                         ),
                       ),
                     )).toList()),

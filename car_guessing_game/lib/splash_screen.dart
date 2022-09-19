@@ -12,7 +12,7 @@ class Splash extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: const ColorScheme.dark(),
       ),
       home: const SplashScreen(),
     );
@@ -33,7 +33,7 @@ class SplashScreenState extends State<SplashScreen> {
 
   EasySplashScreen loadingScreen() {
     return EasySplashScreen(
-      logo: const Image(image: Strings.avatar),
+      logo: const Image(image: AssetImage("assets/guesscar.jpg")),
       title: const Text(
         "Guess The Car",
         style: TextStyle(

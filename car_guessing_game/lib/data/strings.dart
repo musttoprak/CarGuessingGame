@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names
+
 import 'dart:math';
 
 import 'package:car_guessing_game/models/car.dart';
@@ -7,7 +9,7 @@ import 'package:flutter/material.dart';
 
 class Strings {
   static const String AppName = "Car Guessing Game";
-  static const AssetImage avatar = AssetImage("assets/guesscar.jpg");
+
   static List<CarBrand> CarBrands = [
     //brandId=0
     CarBrand(brandName: "Mercedes", imageUrl: "mercedes_benz.png"),
@@ -73,7 +75,7 @@ class Strings {
   //1-tüm arabala modellerinden araba oluşturup liste atıyor
   static List<Car> carsToAdd() {
     List<Car> carsList = [];
-    for (var i = 0; i <= Strings.CarModels.length-1; i++) {
+    for (var i = 0; i <= Strings.CarModels.length - 1; i++) {
       carsList.add(Car(CarModels[i], findToBrand(i)));
     }
     return carsList;
@@ -130,5 +132,8 @@ class Strings {
     }
     return answers;
   }
+}
 
+class MyAppBar {
+  static AssetImage avatar = const AssetImage("assets/animals/1.png");
 }

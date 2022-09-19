@@ -1,9 +1,5 @@
-import 'dart:math';
-
 import 'package:car_guessing_game/data/strings.dart';
 import 'package:car_guessing_game/models/car.dart';
-import 'package:car_guessing_game/models/car_brand.dart';
-import 'package:car_guessing_game/models/car_model.dart';
 import 'package:flutter/material.dart';
 
 class Questions extends StatefulWidget {
@@ -23,33 +19,47 @@ class _QuestionsState extends State<Questions> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 100,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage("assets/car/${cars[0].brand.brandName.toLowerCase()}/${cars[0].model.imageUrl}"),
-                fit:BoxFit.cover
-              )),
+            Padding(padding: const EdgeInsets.all(8),child: Text("${1}/${cars.length}")),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          "assets/car/${cars[0].brand.brandName.toLowerCase()}/${cars[0].model.imageUrl}"),
+                      fit: BoxFit.fitWidth,
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(100))),
+              ),
             ),
-            SizedBox(height: 50),
-            Column(children: createContainer(cars[0]))
+            Expanded(child: createContainer(cars[0]))
           ],
         ),
       ),
     );
   }
 
-  List<Container> createContainer(Car car) {
-    var containers = Strings.answers(car);
-    return containers
+  Column createContainer(Car car) {
+    var carsModel = Strings.answers(car);
+    carsModel.add(car.model.modelName);
+    List<Container> containers = carsModel
         .map((e) => Container(
-              child: Text(e),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
+                  color: Colors.white,
                   border: Border.all(width: 2),
-                  borderRadius: BorderRadius.circular(24)),
+                  borderRadius: BorderRadius.circular(16)),
+              child: Text(
+                e,
+                style: const TextStyle(fontSize: 18, color: Colors.black),
+              ),
             ))
         .toList();
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: containers,
+    );
   }
 }
