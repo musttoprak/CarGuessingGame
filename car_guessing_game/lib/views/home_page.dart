@@ -1,6 +1,5 @@
 import 'package:car_guessing_game/data/strings.dart';
 import 'package:car_guessing_game/views/brand_categories.dart';
-import 'package:car_guessing_game/views/choose_avatar.dart';
 import 'package:car_guessing_game/views/questions_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _avatar= MyAppBar.avatar;
   @override
   Widget build(BuildContext context) {
-    print(MyAppBar.avatar.assetName.toString());
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
@@ -31,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         leading: InkWell(
           onTap: () => setState(() {}),
           child: CircleAvatar(
-            backgroundImage: _avatar,
+            backgroundImage: Strings.avatar,
           ),
         ),
         leadingWidth: 65,
@@ -43,26 +40,27 @@ class _HomePageState extends State<HomePage> {
         ],
         automaticallyImplyLeading: true,
       ),
-      body: Column(children: listCategories),
+      body: Column(
+        children: [
+          categorysWidget("Marka Bilme", "kum.png", const Questions()),
+          categorysWidget("Model Bilme", "sonsuz.png", const Questions()),
+          categorysWidget(
+              "Markaya Göre Model Bilme", "car.png", const BrandCategory()),
+          const SizedBox(
+            height: 50,
+          )
+        ],
+      ),
     );
   }
 
-  List<Widget> get listCategories {
-    List<String> kategoriler = [
-      "Marka Bilme",
-      "Model Bilme",
-      "Markaya Göre Model Bilme"
-    ];
-    return [
-      IconButton(
-        iconSize: 36,
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ChooseAvatar()));
-        },
-        icon: const Icon(Icons.supervised_user_circle_outlined),
-      ),
-      Expanded(
+  Expanded categorysWidget(String kategori, String asset, Widget navigator) {
+    return Expanded(
+      child: InkWell(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => navigator),
+        ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
           child: Column(
@@ -73,15 +71,15 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     border: Border.all(color: Colors.black, width: 4),
                     borderRadius: const BorderRadius.all(Radius.circular(36)),
-                    image: const DecorationImage(
-                        image: AssetImage("assets/kum.png"),
+                    image: DecorationImage(
+                        image: AssetImage("assets/$asset"),
                         repeat: ImageRepeat.repeat),
                   ),
                   alignment: Alignment.center,
                 ),
               ),
               Text(
-                kategoriler[0],
+                kategori,
                 style:
                     const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
@@ -89,75 +87,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      Expanded(
-        child: InkWell(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Questions()),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black, width: 4),
-                      borderRadius: const BorderRadius.all(Radius.circular(36)),
-                      image: const DecorationImage(
-                          image: AssetImage("assets/sonsuz.png"),
-                          repeat: ImageRepeat.repeat),
-                    ),
-                    alignment: Alignment.center,
-                  ),
-                ),
-                Text(
-                  kategoriler[1],
-                  style: const TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      Expanded(
-        child: InkWell(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const BrandCategory()),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black, width: 4),
-                      borderRadius: const BorderRadius.all(Radius.circular(36)),
-                      image: const DecorationImage(
-                          image: AssetImage("assets/car.png"),
-                          repeat: ImageRepeat.repeat),
-                    ),
-                    alignment: Alignment.center,
-                  ),
-                ),
-                Text(
-                  kategoriler[2],
-                  style: const TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      const SizedBox(
-        height: 50,
-      )
-    ];
+    );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:car_guessing_game/data/strings.dart';
+
 import 'package:car_guessing_game/views/home_page.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';

@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 
 class Strings {
   static const String AppName = "Car Guessing Game";
-
+  static AssetImage avatar = const AssetImage("assets/guesscar.jpg");
   static List<CarBrand> CarBrands = [
     //brandId=0
     CarBrand(brandName: "Mercedes", imageUrl: "mercedes_benz.png"),
